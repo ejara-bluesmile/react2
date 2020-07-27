@@ -1,24 +1,21 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Login from "./components/Login";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Biblioteca from "./components/Biblioteca";
+import LoginLogin from "./components/Login/Login";
+import Admin from "./components/Login/Admin";
+import Logout from "./components/Login/Logout";
+import Crud from "./components/Crud/FormCrud";
 
 function App() {
   return (
     <Router>
       <div className="">
-        <Route path="/" exact>
-          <Login />
-          <div className="row justify-content-center">
-            <Link to="biblioteca" className="btn btn-primary btn-lg ">
-              Entrar
-            </Link>
-          </div>
-        </Route>
         <Switch>
-          <Route path="/biblioteca">
-            <Biblioteca />
-          </Route>
+          <Route exact path="/" component={LoginLogin}></Route>
+          <Route exact path="/biblioteca" component={Biblioteca}></Route>
+          <Route exact path="/admin" component={Admin}></Route>
+          <Route exact path="/logout" component={Logout}></Route>
+          <Route exact path="/crud" component={Crud}></Route>
         </Switch>
       </div>
     </Router>
