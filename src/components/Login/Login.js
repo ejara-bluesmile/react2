@@ -29,7 +29,7 @@ export default class Login extends Component {
     e.preventDefault();
     const { username, password } = this.state;
 
-    if (username === "A" && password === "B") {
+    if (username === "sebas" && password === "bluesmile") {
       localStorage.setItem("token", "ansfdjanfdkjasdknf");
       localStorage.setItem("nick", username);
       this.setState({

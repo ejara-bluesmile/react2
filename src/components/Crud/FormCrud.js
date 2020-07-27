@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import UserTable from "./UserTable";
 import AddUserForm from "./AddUserForm";
+import Header from "../Header";
 
 import EditUserForm from "./EditUserForm";
 import { v4 as uuidv4 } from "uuid";
@@ -50,27 +51,37 @@ const Crud = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Crud Libreria</h1>
-      <hr />
-      <div className="row">
-        <div className="form-group col-6">
-          {editing ? (
-            <div>
-              {" "}
-              <h2>Editar Libro</h2>
-              <EditUserForm currentUser={currentUser} updateUser={updateUser} />
-            </div>
-          ) : (
-            <div>
-              <h2>Añadir Libro</h2>
-              <AddUserForm addUser={addUser} />
-            </div>
-          )}
-        </div>
-        <div className="form-group col-6">
-          <h2>Listado</h2>
-          <UserTable users={users} deleteUser={deleteUser} editRow={editRow} />
+    <div>
+      <Header />
+      <div className="container">
+        <h1>Crud Libreria</h1>
+        <hr />
+        <div className="row">
+          <div className="form-group col-6">
+            {editing ? (
+              <div>
+                {" "}
+                <h2>Editar Libro</h2>
+                <EditUserForm
+                  currentUser={currentUser}
+                  updateUser={updateUser}
+                />
+              </div>
+            ) : (
+              <div>
+                <h2>Añadir Libro</h2>
+                <AddUserForm addUser={addUser} />
+              </div>
+            )}
+          </div>
+          <div className="form-group col-6">
+            <h2>Listado</h2>
+            <UserTable
+              users={users}
+              deleteUser={deleteUser}
+              editRow={editRow}
+            />
+          </div>
         </div>
       </div>
     </div>

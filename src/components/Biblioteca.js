@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Buscador from "./Buscador";
 import Resultado from "./Resultados";
-import { Link } from "react-router-dom";
-import Login from "./Login/Login";
+import Header from "./Header";
 
 class Biblioteca extends Component {
   state = { book: "", objeto: [], isLoggedIn: false };
@@ -30,7 +29,7 @@ class Biblioteca extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar  navbar-dark bg-primary">
+        {/* <nav className="navbar  navbar-dark bg-primary">
           <a className="navbar-brand" href="">
             Bibliomatica
           </a>
@@ -46,7 +45,8 @@ class Biblioteca extends Component {
               </button>
             </Link>
           </form>
-        </nav>
+        </nav> */}
+        <Header />
         <div className="jumbotron container">
           <h1 className="display-3">Hola {this.props.nick} !</h1>
           <p className="lead">
